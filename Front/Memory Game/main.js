@@ -23,7 +23,10 @@ let blocks = Array.from(blocksContainer.children);
 // Another Way to get order Range
 let orderRange = Array.from(Array(blocks.length).keys());
 
-// console.log(orderRange);
+console.log(orderRange);
+
+shuffle(orderRange);
+console.log(orderRange);
 
 let testOrderRange = [5, 15, 23, 6, 9, 8, 1, 4, 2, 7, 29, 3, 21, 26, 17, 14, 22, 10, 12, 21, 13, 16, 24, 25, 18, 20, 19, 0, 28, 27];
 
@@ -32,3 +35,31 @@ let testOrderRange = [5, 15, 23, 6, 9, 8, 1, 4, 2, 7, 29, 3, 21, 26, 17, 14, 22,
 blocks.forEach((block, index) => {
     block.style.order = testOrderRange[index];
 });
+
+
+/* Shuffle Function */
+
+function shuffle(array) {
+    // Setting var
+    let current = array.length,
+        temp,
+        random;
+    
+    while (current > 0) {
+        // get random number
+        random = Math.floor(Math.random() * current);
+        // Decrease length by one
+        current--;
+        // [1] Save Current Element in Stash
+        temp = array[current];
+        // [2] Current Element = Random Element
+        array[current] = array[random];
+
+
+        // [3] Random Element = Get Element from Stash
+        array[random] = temp;
+        console.log(random);
+    }
+    return array;
+    
+}
