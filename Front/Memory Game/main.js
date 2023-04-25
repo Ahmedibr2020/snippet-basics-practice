@@ -23,18 +23,68 @@ let blocks = Array.from(blocksContainer.children);
 // Another Way to get order Range
 let orderRange = Array.from(Array(blocks.length).keys());
 
-console.log(orderRange);
-
+// console.log(orderRange);
 shuffle(orderRange);
-console.log(orderRange);
-
-let testOrderRange = [5, 15, 23, 6, 9, 8, 1, 4, 2, 7, 29, 3, 21, 26, 17, 14, 22, 10, 12, 21, 13, 16, 24, 25, 18, 20, 19, 0, 28, 27];
-
-
+// console.log(orderRange);
+// let testOrderRange = [5, 15, 23, 6, 9, 8, 1, 4, 2, 7, 29, 3, 21, 26, 17, 14, 22, 10, 12, 21, 13, 16, 24, 25, 18, 20, 19, 0, 28, 27];
 /* Add Order Property to Game blocks */
 blocks.forEach((block, index) => {
-    block.style.order = testOrderRange[index];
+    // Add CSS order Property
+    block.style.order = orderRange[index];
+
+    // Add Click Event
+    block.addEventListener('click', function () {
+        // Trigger flipBlock Function
+
+        flipBlock(block);
+    });
+    
+
+
 });
+
+/* Stop Clicking Function(); */
+function stopClicking() {
+
+    // Add Class No Clicking on Main Container
+    blocksContainer.classList.add('no-clicking');
+
+
+    setTimeout(() => {
+        
+        // remove Class no clicking after the duration
+        blocksContainer.classList.remove('no-clicking');
+
+    },duration)
+
+}
+
+
+
+/* Flip Block Function */
+function flipBlock(selectedBLock) {
+    // Add class is flipped
+    selectedBLock.classList.add('is-flipped');
+
+
+    // Collect all flipped cards
+    let allFlippedBlocks = blocks.filter(flippedBlock => flippedBlock.classList.contains('is-flipped'));
+    // if there is two Selected Blocks
+    if (allFlippedBlocks.length === 2) {
+        // console.log('Two Flipped Blocks selected')
+        
+        // Stop clicking Function
+        stopClicking();
+
+        // Checking matched block function
+
+        
+    }
+
+
+
+
+}
 
 
 /* Shuffle Function */
