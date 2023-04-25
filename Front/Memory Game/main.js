@@ -12,8 +12,10 @@ document.querySelector(".control-buttons span").onclick= function() {
     // Remove Splash Screen
     document.querySelector(".control-buttons").remove();
 }
-/* START THE GAME */
 
+///////////////////////
+/* START THE GAME *///
+/////////////////////
 let duration = 1000;
 let blocksContainer = document.querySelector(".memory-game-blocks");
 let blocks = Array.from(blocksContainer.children);
@@ -43,7 +45,12 @@ blocks.forEach((block, index) => {
 
 });
 
-/* Stop Clicking Function(); */
+
+
+
+//////////////////////////////
+/* Stop Clicking Function*///
+////////////////////////////
 function stopClicking() {
 
     // Add Class No Clicking on Main Container
@@ -60,8 +67,10 @@ function stopClicking() {
 }
 
 
+/////////////////////////////
+/* Flip Block Function *////
+///////////////////////////
 
-/* Flip Block Function */
 function flipBlock(selectedBLock) {
     // Add class is flipped
     selectedBLock.classList.add('is-flipped');
@@ -78,16 +87,44 @@ function flipBlock(selectedBLock) {
 
         // Checking matched block function
 
-        
+        checkMatchedBlocks(allFlippedBlocks[0],allFlippedBlocks[1]);
     }
 
+}
+///////////////////////////////////////
+// Checking Matched Blocks Function //
+/////////////////////////////////////
+function checkMatchedBlocks(firstBlock, secondBlock) {
+    let triesElement = document.querySelector('.tries span');
 
 
+    if (firstBlock.dataset.tech === secondBlock.dataset.tech) {
+        firstBlock.classList.remove('is-flipped');    
+        secondBlock.classList.remove('is-flipped');    
 
+
+        firstBlock.classList.add('has-match');    
+        secondBlock.classList.add('has-match');  
+        document.getElementById('success').play();
+    
+    } else {
+        triesElement.innerHTML = parseInt(triesElement.innerHTML)+1;
+
+        setTimeout(() => {
+            firstBlock.classList.remove('is-flipped');
+            secondBlock.classList.remove('is-flipped');
+        }, duration);
+        document.getElementById('fail').play();
+        
+    
+    }
 }
 
 
-/* Shuffle Function */
+
+//////////////////////////
+//* Shuffle Function *///
+////////////////////////
 
 function shuffle(array) {
     // Setting var
