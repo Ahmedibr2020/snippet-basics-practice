@@ -114,7 +114,7 @@ section{
 .home .row{
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     gap: 1.5rem;
 
 }
@@ -166,6 +166,14 @@ section{
     #menu-btn{
         display:inline-block ;
     }
+    html{
+        font-size: 55%;
+        
+    }
+    .home .row .content h3{
+    font-size: 8rem;
+    }
+
 }
 @media (max-width:768px){
     html{
@@ -189,6 +197,12 @@ section{
         margin: 2rem;
 
     }
+    .home .row .content h3{
+        font-size: 6rem;
+        }
+
+
+
 }
 @media (max-width:450px){
     html{
