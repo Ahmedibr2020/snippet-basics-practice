@@ -24,8 +24,8 @@
             <a href="#about">About</a>
             <a href="#courses">Coureses</a>
             <a href="#teachers">Teachers</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#Contact">Contact</a>
+            <a href="#reviews">reviews</a>
+            <a href="#Contact">contact</a>
         </nav>
 
         <div id="menu-btn" class="fas fa-bars"></div>
@@ -342,8 +342,45 @@
         <div class="swiper-pagination"></div>
     </div>
 </section>
-
 <!-- Reviews Section Ends -->
+<!-- Contact us Section starts -->
+<section class="contact" id="contact">
+    <h1 class="heading"><span>contact</span> us</h1>
+    <div class="row">
+        <div class="image">
+            <img src="images/contactus.svg" alt="">
+        </div>
+        <form action="" method="post">
+            <span>your name</span>
+            <input type="text" required placeholder="enter your full name" maxlength="50" name="name" class="box">
+            <span>your email</span>
+            <input type="email" required placeholder="enter your valid email" maxlength="50" name="email" class="box">
+            <span>your number</span>
+            <input type="number" required placeholder="enter your valid number" maxlength="99999999999"min="0"
+            name="number" class="box" onkeypress="if(this.value.length==10)return false;">
+            <span>select course</span>
+            <select name="courses" class="box">
+                <option value=""disabled selected>select the courses</option>
+                <option value="web development">web development</option>
+                <option value="cyber security">cyber security</option>
+                <option value="science and biology">science and biology</option>
+                <option value="mathematics">mathematics</option>
+                <option value="artificial intelligence">artificial intelligence</option>
+            </select>
+            <span>select gender</span>
+            <div class="radio">
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">male</label>
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">female</label>
+            </div>
+            <input type="submit" value="send message"class="btn"name="send">
+        </form>
+    </div>
+</section>
+
+<!-- Contact us Section Ends -->
+
 <!-- Swiper js link for courses slider -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <!-- Custom js file link -->
