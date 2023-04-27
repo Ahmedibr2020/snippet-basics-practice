@@ -285,8 +285,42 @@ section{
     color:var(--white);
 
 }
+/* //////////////////////////////  */
+.reviews-slider .slide{
+    width: 35rem;
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    margin-bottom: 4rem;
+    user-select: none;
+}
+.reviews-slider .slide p{
+    line-height: 2;
+    font-size: 1.6rem;
+    color: var(--light-white);
 
-
+}
+.reviews-slider .slide .user{
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    margin-top: 1.5rem;
+}
+.reviews-slider .slide .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.reviews-slider .slide .user h3{
+    font-size: 2rem;
+    color:var(--white);
+    margin-bottom: .8rem;
+}
+.reviews-slider .slide .user .stars i{
+    font-size: 1.5rem;
+    color: var(--green);
+}
 
 
 
